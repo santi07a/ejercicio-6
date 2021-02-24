@@ -59,11 +59,11 @@ datos(internados);
 
 function datos(ingresados) {
 	const acumula = (acc, valorActual) => acc + valorActual;
-	cantidadPacientes = ingresados.length;
-	personasMayores = ingresados.filter(ingresados => ingresados.paciente.edad >= 18);
-	cantidadHombresDiabeticos = ingresados.filter(ingresados => ingresados.paciente.sexo === 'H' && ingresados.dieta === 'Diabetes');
-	diasInternado = ingresados.map(ingresados => ingresados.diasIngresado).reduce(acumula);
-	mediaMujeres = ingresados
+	const cantidadPacientes = ingresados.length;
+	const personasMayores = ingresados.filter(ingresados => ingresados.paciente.edad >= 18);
+	const cantidadHombresDiabeticos = ingresados.filter(ingresados => ingresados.paciente.sexo === 'H' && ingresados.dieta === 'Diabetes');
+	const diasInternado = ingresados.map(ingresados => ingresados.diasIngresado).reduce(acumula);
+	const mediaMujeres = ingresados
 		.filter(ingresados => ingresados.paciente.sexo === 'M')
 		.map(ingresados => ingresados.paciente.edad)
 		.reduce(acumula) / ingresados
